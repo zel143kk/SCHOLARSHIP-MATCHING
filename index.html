@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A student scholarship matching demo website.">
+  <title>ScholarMatch | Find scholarships for you</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="ScholarMatch home">
+      <span class="brand-mark">S</span>
+      <span>Scholar<span class="brand-accent">Match</span></span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="#how-it-works">How it works</a>
+      <a href="#matcher">Find scholarships</a>
+      <a href="#about">About</a>
+    </nav>
+    <a class="nav-cta" href="#matcher">Get matched <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="pulse-dot"></span> YOUR NEXT OPPORTUNITY STARTS HERE</div>
+        <h1>Make your goals<br> <span>more affordable.</span></h1>
+        <p class="hero-description">Find scholarship opportunities that fit your school level, grades, and financial situation—all in one simple place.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#matcher">Find my scholarships <span aria-hidden="true">→</span></a>
+          <a class="text-link" href="#how-it-works">See how it works</a>
+        </div>
+        <div class="hero-note"><span class="check-icon">✓</span> Free to explore <span class="note-divider">·</span> Student-friendly <span class="note-divider">·</span> Personalized results</div>
+      </div>
+      <div class="hero-art" aria-label="Scholarship opportunity illustration">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="floating-card card-top"><span class="mini-icon">✦</span><div><strong>Your future, supported</strong><small>One step at a time</small></div></div>
+        <div class="document-card">
+          <div class="document-top"><span class="doc-symbol">S</span><span class="doc-lines"><i></i><i></i></span><span class="doc-star">✦</span></div>
+          <div class="document-title">SCHOLARSHIP<br>OPPORTUNITY</div>
+          <div class="doc-rule"></div>
+          <div class="doc-row"><span></span><span></span></div>
+          <div class="doc-row short"><span></span><span></span></div>
+          <div class="award-seal">★</div>
+        </div>
+        <div class="floating-card card-bottom"><span class="match-icon">✓</span><div><strong>A match for you</strong><small>Explore your possibilities</small></div></div>
+        <span class="sparkle sparkle-one">✦</span><span class="sparkle sparkle-two">✧</span>
+      </div>
+    </section>
+
+    <section class="trust-strip" aria-label="Website benefits">
+      <div><span class="strip-icon">⌕</span><span><strong>Less searching</strong><small>Opportunities in one place</small></span></div>
+      <div><span class="strip-icon">◎</span><span><strong>More relevant results</strong><small>Based on your profile</small></span></div>
+      <div><span class="strip-icon">↗</span><span><strong>Clear requirements</strong><small>Know what to check next</small></span></div>
+    </section>
+
+    <section class="matcher-section" id="matcher">
+      <div class="section-heading">
+        <div class="eyebrow">PERSONALIZED SCHOLARSHIP FINDER</div>
+        <h2>Let's find your <span>best matches.</span></h2>
+        <p>Tell us a little about yourself. We'll compare your profile with the sample scholarship criteria below.</p>
+      </div>
+
+      <div class="matcher-layout">
+        <form id="scholarship-form" class="profile-card">
+          <div class="form-heading"><span class="step-number">01</span><div><h3>Your student profile</h3><p>Fields marked with * are required.</p></div></div>
+          <div class="form-grid">
+            <label class="field full-width">Current school level *
+              <select id="level" required>
+                <option value="">Choose your level</option>
+                <option value="Grade 11">Grade 11</option>
+                <option value="Grade 12">Grade 12</option>
+                <option value="College">College</option>
+              </select>
+            </label>
+            <label class="field">General average (%) *
+              <input id="average" type="number" min="0" max="100" step="0.01" placeholder="e.g. 90" required>
+              <small>Enter a percentage from 0 to 100.</small>
+            </label>
+            <label class="field">Annual household income *
+              <select id="income" required>
+                <option value="">Select income range</option>
+                <option value="low">Below ₱150,000</option>
+                <option value="middle">₱150,000–₱300,000</option>
+                <option value="high">Above ₱300,000</option>
+                <option value="prefer-not">Prefer not to say</option>
+              </select>
+            </label>
+            <label class="field">Where do you live? *
+              <select id="location" required>
+                <option value="">Choose location</option>
+                <option value="NCR">National Capital Region (NCR)</option>
+                <option value="Luzon">Other parts of Luzon</option>
+                <option value="Visayas">Visayas</option>
+                <option value="Mindanao">Mindanao</option>
+                <option value="any">Prefer not to say</option>
+              </select>
+            </label>
+            <label class="field">Preferred support
+              <select id="support">
+                <option value="any">Any scholarship type</option>
+                <option value="financial">Financial need</option>
+                <option value="academic">Academic merit</option>
+                <option value="technology">Technology / ICT</option>
+              </select>
+            </label>
+          </div>
+          <div class="privacy-note"><span aria-hidden="true">♢</span><p><strong>Your details stay in this demo.</strong> This page processes your answers in your browser and does not send them to a server.</p></div>
+          <button class="button button-primary submit-button" type="submit">Find my matches <span aria-hidden="true">→</span></button>
+          <button class="reset-button" type="reset">Clear form</button>
+        </form>
+
+        <aside class="results-panel" aria-live="polite" aria-atomic="false">
+          <div class="results-heading"><div><div class="eyebrow">YOUR RESULTS</div><h3 id="results-title">Your matches will appear here</h3></div><span class="results-symbol">✧</span></div>
+          <p id="results-description" class="results-description">Complete your profile to see which sample opportunities fit your answers.</p>
+          <div id="results-list" class="results-list">
+            <div class="empty-state"><div class="empty-illustration"><span>✦</span><span>✓</span><span>✧</span></div><strong>Your next opportunity could be here.</strong><p>Fill in the form and select “Find my matches” to get started.</p></div>
+          </div>
+          <div class="results-footnote">Demo only: these scholarships and criteria are fictional and are not real funding offers.</div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="how-section" id="how-it-works">
+      <div class="section-heading">
+        <div class="eyebrow">SIMPLE BY DESIGN</div>
+        <h2>Three steps to <span>get started.</span></h2>
+      </div>
+      <div class="steps-grid">
+        <article class="step-card"><div class="step-art step-art-one"><span>01</span><div class="profile-mini">☺<i></i><i></i><i></i></div></div><h3>Build your profile</h3><p>Share your grade average, school level, location, and preferred support.</p></article>
+        <article class="step-card"><div class="step-art step-art-two"><span>02</span><div class="magnifier">⌕</div><div class="mini-lines"><i></i><i></i><i></i></div></div><h3>Compare eligibility</h3><p>The website compares your answers with each sample scholarship's requirements.</p></article>
+        <article class="step-card"><div class="step-art step-art-three"><span>03</span><div class="mini-award">★</div><div class="success-check">✓</div></div><h3>Review your matches</h3><p>See why an opportunity matches and what details you should verify.</p></article>
+      </div>
+    </section>
+
+    <section class="about-banner" id="about">
+      <div class="about-icon">✦</div>
+      <div><div class="eyebrow">A TOOL FOR STUDENTS</div><h2>Spend less time guessing.<br>Spend more time planning.</h2><p>ScholarMatch is a front-end demonstration of personalized scholarship matching. Always confirm current requirements and deadlines with the official scholarship provider.</p></div>
+      <a class="button button-light" href="#matcher">Try the matcher <span aria-hidden="true">→</span></a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand" href="#home"><span class="brand-mark">S</span><span>Scholar<span class="brand-accent">Match</span></span></a>
+    <p>Made to help students explore their next step.</p>
+    <span>© <span id="year"></span> ScholarMatch · Educational demo</span>
+  </footer>
+</body>
+</html>
