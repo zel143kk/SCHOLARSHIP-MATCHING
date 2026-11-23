@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholarship</title>
+    <link rel="stylesheet" href="SS.css">
+</head>
+<body>
+
+<div class="website">
+  <nav id="navbar">
+    <ul class="links">
+      <li><a href="Home.html">HOME</a></li>
+      <li><a href="Scholarship.html">SCHOLARSHIP</a></li>
+      <li><a href="Suggestions.html">SUGGESTIONS</a></li>
+    </ul>
+  </nav>
+
+    <div class="container">
+
+     
+        <div class="left">
+
+            <h1>Search for<br>Scholarships</h1>
+
+            <p>
+                Find scholarships that match
+                your qualifications.
+            </p>
+
+        </div>
+
+   
+        <div class="right">
+
+            <form action="search.php" method="POST">
+
+                <div class="form-group">
+                    <input type="number" name="income"
+                    placeholder="Enter Daily Income" required>
+                    <label>Daily Income</label>
+                </div>
+
+                <div class="form-group">
+                    <input type="number" name="year"
+                    placeholder="Enter Current Year Graduated" required>
+                    <label>Current Year Graduated</label>
+                </div>
+
+                <div class="form-group">
+                    <input type="number" step="0.01" name="grade"
+                    placeholder="Enter Final Grade" required>
+                    <label>Final Grade</label>
+                </div>
+
+                <div class="form-group">
+                    <select name="strand" required>
+                        <option value="" disabled selected>
+                            Select Your Strand
+                        </option>
+                        <option>STEM</option>
+                        <option>ABM</option>
+                        <option>HUMSS</option>
+                        <option>GAS</option>
+                        <option>TVL-ICT</option>
+                        <option>TVL-HE</option>
+                        <option>TVL-IA</option>
+                    </select>
+                    <label>Strand</label>
+                </div>
+
+                <button type="submit">
+                    Start Searching
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
